@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+
+:root{ 
+    --Desaturated-Red: hsl(0, 36%, 70%);
+    --Soft-Red: hsl(0, 93%, 68%);
+    --Dark-Grayish-Red: hsl(0, 6%, 24%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Josefin Sans", sans-serif;
+    height: 100vh;
+    overflow: hidden;
+}
+
+main{
+    display: grid;
+    grid-template-columns: 58% 1fr;
+    height: 100%;
+}
+
+.info-section{
+    padding: 10% 25% 10% 20%;
+    display: grid;
+    grid-template-columns: 1fr;
+    background: url(images/bg-pattern-desktop.svg), linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.logo{
+    width: 10rem;
+}
+
+h1{
+    font-size: 70px;
+    text-transform: uppercase;
+    line-height: 1;
+    letter-spacing: 10px;
+    font-weight: 600;
+    color: var(--Dark-Grayish-Red);
+}
+
+span{
+    font-weight: 300;
+    color: var(--Desaturated-Red);
+}
+
+p{
+    color: var(--Desaturated-Red);
+    font-size: 16px;
+    max-width: 420px;
+    line-height: 1.7;
+    margin: 25px 0;
+}
+
+form{
+    display: grid;
+    grid-template-columns: 80% 10% 1fr;
+    position: relative;
+}
+
+input{
+    background: transparent;
+    outline: none;
+    border: 1px solid var(--Desaturated-Red);
+    height: 60px;
+    border-radius: 30px;
+    grid-column: 1/4;
+    padding-left: 20px;
+}
+
+input::placeholder{
+    color: var(--Desaturated-Red);
+}
+
+.error-icon{
+    grid-column: 2/3;
+    position: absolute;
+    top: 15px;
+    right: 40px;
+    display: none;
+}
+
+.enter-btn{
+    background-image: linear-gradient( 135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    padding: 20px 40px;
+    border-radius: 30px;
+    grid-column: 3/4;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+}
+
+.enter-btn:hover{
+    background: hsl(0, 80%, 86%);
+    transition: 0.1s;
+}
+
+.notification{
+    color: var(--Soft-Red);
+    margin: 0;
+    padding-left: 20px;
+    font-size: 15px;
+    display: none;
+}
+
+.desktop-image{
+    height: 100vh;
+    width: 100%;
+}
+
+.mobile-image{
+    display: none;
+}
+
+.visible{
+    display: block;
+}
+
+@media (max-width:1030px) {
+
+    main{
+        grid-template-columns: 50% 1fr;
+    }
+
+    .info-section{
+        padding: 10% 20% 10% 15%;
+    }
+
+    h1{
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 810px) {
+    body{
+        overflow: visible;
+        height: 100%;
+    }
+
+    main{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "icon"
+            "image"
+            "info"
+        ;
+        background-image: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+        min-height: 100vh;
+    }
+
+    .logo-section{
+        grid-area: icon;
+        position: absolute;
+        top: 5%;
+        left: 10%;
+        width: 70%;
+    }
+
+    .logo{
+        height: 3rem;
+    }
+
+    .image-section{
+        grid-area: image;
+        margin-top: 150px;
+    }
+
+    .info-section{
+        grid-area: info;
+        background: transparent;
+        padding: 10%;
+    }
+
+    .text-section{
+        text-align: center;
+    }
+
+    h1{
+        margin-bottom: 50px;
+        line-height: 1.2;
+        font-size: 60px;
+    }
+
+    .text{
+        margin: auto;
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+
+    .error-icon{
+        right: 60px;
+    }
+
+    .notification{
+        text-align: left;
+    }
+
+    .desktop-image{
+        display: none;
+    }
+
+    .mobile-image{
+        display: block;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+    }
+}
+
